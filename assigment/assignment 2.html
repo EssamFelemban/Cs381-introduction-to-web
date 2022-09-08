@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Page Title</title>
+
+<script>
+
+function checkDate() 
+
+{
+
+var dt_regex = /^([0-9]{2}[-\/\.]){2}[0-9]{4}$/; 
+var tDate = document.getElementById("cdate").value; 
+
+if (dt_regex.test(tDate)) 
+
+{
+
+document.getElementById("d1").innerHTML = "<p style='color:green;'>Date follows dd/mm/yyyy format</p>"; //display message
+
+}
+
+else
+
+{
+
+document.getElementById("d1").innerHTML = "<p style='color:red;'>Invalid date format</p>";
+
+}
+
+}
+
+function checkName() //define checkName() function
+
+{
+
+var uname = document.getElementById("username").value; //get the username
+
+var expr = /^[a-zA-Z]{1}[a-zA-Z0-9_]{2,9}$/; //specify the pattern
+
+if (!expr.test(uname)) //test the username
+
+{ //display message
+
+document.getElementById("d2").innerHTML = "<p style='color:red;'>Only Alphabets, Numbers and Underscore and between 3 to 10 characters.";
+
+}
+
+else
+
+document.getElementById("d2").innerHTML ="<p style='color:green;'> user name follows format</p>";
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<table>
+
+<form >
+
+<tr>
+
+<td>
+
+Enter the date:
+
+</td>
+
+<td>
+
+<input type="text" id="cdate" name="cdate" oninput="checkDate()"/><p id="d1" ></p>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Enter the username:
+
+</td>
+
+<td>
+
+<input type="text" id="username" name="username" oninput="checkName()"/><p id="d2" ></p>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+</td>
+
+<td>
+
+<input type="submit" value="check"/>
+
+</td>
+
+</tr>
+
+</form>
+
+</table>
+
+</body>
+
+</html>
